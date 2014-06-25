@@ -28,7 +28,8 @@ def remove_adjacent(nums):
 # Ideally, the solution should work in "linear" time, making a single
 # pass of both lists.
 def linear_merge(list1, list2):
-    
+   
+    #Ar trebui sa faci cum zice mai jos totusi
     l = []
     l1 = len(list1)
     l2 = len(list2)
