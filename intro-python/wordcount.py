@@ -38,6 +38,44 @@ print_words() and print_top().
 """
 
 import sys
+import operator
+
+def build_dict(filename):
+
+    d = {}
+    f = open(filename, 'r')
+
+    for line in f:
+        words = line.split()
+
+        for word in words:
+            if word.isalpha():
+                if word.lower() in d:
+                    d[word.lower()] += 1
+                else:
+                    d[word.lower()] = 1
+
+    return d
+
+def print_words(filename):
+
+    d = build_dict(filename)
+    d_sorted = sorted(d.items(), key = lambda x : x[1])
+
+    for key,nr in d_sorted:
+        print key + ' ' + str(nr)
+
+def print_top(filename):
+    d = build_dict(filename)
+    d_sorted = sorted(d.items(), key = lambda x : x[1])
+    d_sorted.reverse();
+
+    count = 0
+    for key, nr in d_sorted:
+        count += 1
+        if count == 20:
+            break
+        print key + ' ' + str(nr)
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
