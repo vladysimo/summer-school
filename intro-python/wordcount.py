@@ -72,10 +72,10 @@ def print_top(filename):
 
     count = 0
     for key, nr in d_sorted:
-        count += 1
         if count == 20:
             break
         print key + ' ' + str(nr)
+        count += 1
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
